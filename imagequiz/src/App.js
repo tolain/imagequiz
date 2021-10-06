@@ -24,7 +24,7 @@ function App() {
         </Row>
         <Switch>
           <Route exact path='/'>
-            <Home color={green}/>
+            <Home/>
           </Route>
           <Route path='/signup'>
             <Register />
