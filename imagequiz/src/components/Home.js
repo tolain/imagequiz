@@ -28,6 +28,68 @@ const Home = (props) => {
             </Row>
         </Container>
     );
+    
 }
+
+export default function App() {
+    const generateQuestions = [
+        {
+            questions: 'Which word matches the image?',
+            choiceIndex: [
+                { answerText: 'Sunflower', isCorrect: false },
+				{ answerText: 'Acacia', isCorrect: true },
+				{ answerText: 'Gladiolas', isCorrect: false },
+                                ],
+        },
+
+        {
+            questions: 'Which word matches the image?',
+            choiceIndex: [
+                { answerText: 'Sunflower', isCorrect: false },
+				{ answerText: 'Acacia', isCorrect: true },
+				{ answerText: 'Gladiolas', isCorrect: false },
+                                ],
+        },
+
+        {
+            questions: 'Which word matches the image?',
+            choiceIndex: [
+                { answerText: 'Sunflower', isCorrect: false },
+				{ answerText: 'Acacia', isCorrect: true },
+				{ answerText: 'Gladiolas', isCorrect: false },
+                                ],
+        },
+
+        {
+            questions: 'Which word matches the image?',
+            choiceIndex: [
+                { answerText: 'Sunflower', isCorrect: false },
+				{ answerText: 'Acacia', isCorrect: true },
+				{ answerText: 'Gladiolas', isCorrect: false },
+                                ],
+        },
+
+        {
+            questions: 'Which word matches the image?',
+            choiceIndex: [
+                { answerText: 'Sunflower', isCorrect: false },
+				{ answerText: 'Acacia', isCorrect: true },
+				{ answerText: 'Gladiolas', isCorrect: false },
+                                ],
+        },
+
+        {
+            questions: 'Which word matches the image?',
+            choiceIndex: [
+                { answerText: 'Sunflower', isCorrect: false },
+				{ answerText: 'Acacia', isCorrect: true },
+				{ answerText: 'Gladiolas', isCorrect: false },
+                                ],
+        },
+
+
+
+
+
 
 export default Home;
