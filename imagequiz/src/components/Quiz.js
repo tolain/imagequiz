@@ -1,9 +1,10 @@
-import {useLocation} from 'react-router-dom'
+import {useLocation, Link} from 'react-router-dom'
 import quizzes from '../communication/data'
 import Col from "react-bootstrap/Col";
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import {useState} from 'react';
+import { Row, Image, Container, Button } from 'react-bootstrap';
 
 let Quiz = () => {
     const [currentIndex, setCurrentIndex] = useState (0); 
@@ -32,17 +33,16 @@ let Quiz = () => {
     function shuffle(array) {
         let places  = array.map((item, index) => index);
         return array.map((item, index, array) => {
-            const random_index = Math.floor(Math.floor(Math.random() * places.length);
+            const random_index = Math.floor(Math.random() * places.length);
             const places_value = places[random_index];
             places.splice(random_index, 1);
             return array[places_value];
         })
-
-    }
+}
 
     return (
         <Container>
-            {!gameover ?
+            {!gameOver ?
             <Row>
                 <Col>
                     <Image src={questions[currentIndex].picture}></Image>
@@ -60,13 +60,13 @@ let Quiz = () => {
             :''}
             <Row>
                 <Col>
-                    score: {Score}
+                    score: {quizFinished}
                 </Col>
             </Row>
-            {gameover ?
+            {gameOver ?
             <Row>
                 <Col>
-                    <Botton onClick={restartQuiz}>Restart</Botton>
+                    <Button onClick={restartQuiz}>Restart</Button>
                 </Col>
                 <Col>
                     <Link to="/"><Button>Go Home</Button></Link>
