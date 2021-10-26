@@ -1,18 +1,21 @@
 import { useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useHistory } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
-import flowers from '../communication/data';
+import flowers from '../communication/flowers';
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const Home = (props) => {
 
-    const location = useLocation();
+    const history = useHistory ()
+    let goToQuiz = (name) => {
+        history.push({pathname:'/quiz', state: {flowerName: name}})
+    }
     let getImages = () => {
         return flowers.map(flower => 
-        <Col>
-        <Card>
+        <Col key = {flower.name}>
+        <Card onClick = {() => goToQuiz (flower.name)}> 
             <Card.Img variant="top" src={flower.picture} />
             <Card.Body>
                 <Card.Text>
@@ -30,66 +33,5 @@ const Home = (props) => {
     );
     
 }
-
-export default function App() {
-    const generateQuestions = [
-        {
-            questions: 'Which word matches the image?',
-            choiceIndex: [
-                { answerText: 'Sunflower', isCorrect: false },
-				{ answerText: 'Acacia', isCorrect: true },
-				{ answerText: 'Gladiolas', isCorrect: false },
-                                ],
-        },
-
-        {
-            questions: 'Which word matches the image?',
-            choiceIndex: [
-                { answerText: 'Sunflower', isCorrect: false },
-				{ answerText: 'Acacia', isCorrect: true },
-				{ answerText: 'Gladiolas', isCorrect: false },
-                                ],
-        },
-
-        {
-            questions: 'Which word matches the image?',
-            choiceIndex: [
-                { answerText: 'Sunflower', isCorrect: false },
-				{ answerText: 'Acacia', isCorrect: true },
-				{ answerText: 'Gladiolas', isCorrect: false },
-                                ],
-        },
-
-        {
-            questions: 'Which word matches the image?',
-            choiceIndex: [
-                { answerText: 'Sunflower', isCorrect: false },
-				{ answerText: 'Acacia', isCorrect: true },
-				{ answerText: 'Gladiolas', isCorrect: false },
-                                ],
-        },
-
-        {
-            questions: 'Which word matches the image?',
-            choiceIndex: [
-                { answerText: 'Sunflower', isCorrect: false },
-				{ answerText: 'Acacia', isCorrect: true },
-				{ answerText: 'Gladiolas', isCorrect: false },
-                                ],
-        },
-
-        {
-            questions: 'Which word matches the image?',
-            choiceIndex: [
-                { answerText: 'Sunflower', isCorrect: false },
-				{ answerText: 'Acacia', isCorrect: true },
-				{ answerText: 'Gladiolas', isCorrect: false },
-                                ],
-        },
-
-
-
-
-
 
 export default Home;

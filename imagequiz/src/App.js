@@ -11,6 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Quiz from './components/Quiz'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <Register />
+          </Route>
+          <Route path= '/quiz'>
+            <Quiz />
           </Route>
           <Route path='/login'>
             <Login />
