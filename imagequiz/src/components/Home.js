@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+
+import { useHistory } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import flowers from '../communication/flowers';
 import Container from "react-bootstrap/esm/Container";
